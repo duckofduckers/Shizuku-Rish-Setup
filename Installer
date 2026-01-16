@@ -20,21 +20,32 @@ if [[ -f "$DEX_BIN" && -f "$RISH_BIN" ]]; then
     exit 0
 fi
 
-echo -e "${YELLOW}[*] Installing rish files...${X}"
+echo -e "${YELLOW}[*] Checking rish files...${X}"
 
-curl -sS -L -o "$DEX_BIN" "https://github.com/duckofduckers/Shizuku-Rish-Installer/raw/main/rish_shizuku.dex"
-curl -sS -L -o "$RISH_BIN" "https://github.com/duckofduckers/Shizuku-Rish-Installer/raw/main/rish"
+declare -A files=(
+    ["rish_shizuku.dex"]="https://github.com/duckofduckers/Shizuku-Rish-Installer/raw/main/rish_shizuku.dex"
+    ["rish"]="https://github.com/duckofduckers/Shizuku-Rish-Installer/raw/main/rish"
+)
 
-chmod +x "$RISH_BIN"
+for filename in "${!files[@]}"; do
+    filepath="$BIN/$filename"
+    url="${files[$filename]}"
 
-if [[ -f "$DEX_BIN" ]]; then
-    echo -e "${GREEN}[*] rish_shizuku.dex file setup successfully${X}"
-else
-    echo -e "${RED}[*] rish_shizuku.dex not setup successfully${X}"
-fi
+    if [[ -f "$filepath" ]]; then
+        echo -e "${BLUE}[*] $filename already exists, skipping${X}"
+        continue
+    fi
 
-if [[ -f "$RISH_BIN" ]]; then
-    echo -e "${GREEN}[*] rish file setup successfully${X}"
-else
-    echo -e "${RED}[*] rish not setup successfully${X}"
-fi
+    echo -e "${YELLOW}[*] Installing $filename...${X}"
+    curl -sS -L -o "$filepath" "$url"
+
+    if [[ "$filename" == "rish" ]]; then
+        chmod +x "$filepath"
+    fi
+
+    if [[ -f "$filepath" ]]; then
+        echo -e "${GREEN}[*] $filename setup successfully${X}"
+    else
+        echo -e "${RED}[*] $filename not setup successfully${X}"
+    fi
+done
