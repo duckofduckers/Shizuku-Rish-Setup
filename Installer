@@ -11,7 +11,7 @@ BLUE='\033[1;34m'
 X='\033[0m'
 
 if [[ -z "$PREFIX" || -z "$TERMUX_VERSION" ]]; then
-    echo -e "${RED}[*] This script must be run in Termux${X}"
+    echo -e "${RED}[*] This script must be ran in Termux${X}"
     exit 1
 fi
 
