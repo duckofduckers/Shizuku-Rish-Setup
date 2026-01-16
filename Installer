@@ -1,0 +1,31 @@
+#!/bin/bash
+
+BIN="/data/data/com.termux/files/usr/bin"
+DEX_BIN="$BIN/rish_shizuku.dex"
+RISH_BIN="$BIN/rish"
+
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;34m'
+X='\033[0m'
+
+if [[ -z "$PREFIX" || -z "$TERMUX_VERSION" ]]; then
+    echo -e "${RED}[*] This script must be run in Termux${X}"
+    exit 1
+fi
+
+if [[ -f "$DEX_BIN" && -f "$RISH_BIN" ]]; then
+    echo -e "${BLUE}[*] Already installed rish files${X}"
+    exit 0
+fi
+
+echo -e "${YELLOW}[*] Installing rish files...${X}"
+
+curl -sS -L -o "$DEX_BIN" "https://github.com/duckofduckers/Shizuku-Rish-Installer/raw/main/rish_shizuku.dex"
+curl -sS -L -o "$RISH_BIN" "https://github.com/duckofduckers/Shizuku-Rish-Installer/raw/main/rish"
+
+chmod +x "$RISH_BIN"
+
+echo -e "${GREEN}[*] rish_shizuku.dex file setup successfully${X}"
+echo -e "${GREEN}[*] rish file setup successfully${X}"
