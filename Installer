@@ -27,5 +27,14 @@ curl -sS -L -o "$RISH_BIN" "https://github.com/duckofduckers/Shizuku-Rish-Instal
 
 chmod +x "$RISH_BIN"
 
-echo -e "${GREEN}[*] rish_shizuku.dex file setup successfully${X}"
-echo -e "${GREEN}[*] rish file setup successfully${X}"
+if [[ -f "$DEX_BIN" ]]; then
+    echo -e "${GREEN}[*] rish_shizuku.dex file setup successfully${X}"
+else
+    echo -e "${RED}[*] rish_shizuku.dex not setup successfully${X}"
+fi
+
+if [[ -f "$RISH_BIN" ]]; then
+    echo -e "${GREEN}[*] rish file setup successfully${X}"
+else
+    echo -e "${RED}[*] rish not setup successfully${X}"
+fi
