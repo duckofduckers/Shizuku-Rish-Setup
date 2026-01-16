@@ -1,4 +1,4 @@
-# Shizuku-Rish-Installer
+# Shizuku-Rish-Setup
 
 The setup process for this installer is very easy and only requires one step.
 
