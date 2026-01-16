@@ -28,7 +28,7 @@ bash <(curl -fsSL https://github.com/duckofduckers/Shizuku-Rish-Setup/raw/main/I
 
 ---
 
-# Uninstallation
+## Uninstallation
 
 To remove all files installed by the installer, run the uninstaller:
 
@@ -38,7 +38,7 @@ bash <(curl -fsSL https://github.com/duckofduckers/Shizuku-Rish-Setup/raw/main/U
 
 ---
 
-# Releases
+## Releases
 
 The Releases page is provided for reference and transparency:
 
@@ -48,7 +48,7 @@ https://github.com/duckofduckers/Shizuku-Rish-Setup/releases/tag/Release
 
 ---
 
-# Notes
+## Notes
 
 Only installs performed using the official installer are supported
 
