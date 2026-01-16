@@ -18,10 +18,40 @@ Using the installer is the **recommended and supported** installation method.
 
 ---
 
-## Recommended Installation
+## Installation
 
 Run the installer directly in Termux:
 
 ```sh
 bash <(curl -fsSL https://github.com/duckofduckers/Shizuku-Rish-Setup/raw/main/Installer)
 ```
+
+---
+
+Uninstallation
+
+To remove all files installed by the installer, run the uninstaller:
+
+```sh
+bash <(curl -fsSL https://github.com/duckofduckers/Shizuku-Rish-Setup/raw/main/Uninstaller)
+```
+
+---
+
+Releases
+
+The Releases page is provided for reference and transparency:
+
+https://github.com/duckofduckers/Shizuku-Rish-Setup/releases/tag/Release
+
+> ⚠️ Manual installation from release assets is not recommended and is not officially supported.
+
+---
+
+Notes
+
+Only installs performed using the official installer are supported
+
+Modified scripts or manual installs may result in undefined behavior
+
+If something breaks, re-running the installer is recommended.
