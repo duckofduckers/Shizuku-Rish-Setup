@@ -1,0 +1,22 @@
+#!/bin/bash
+
+RISH_BIN="/data/data/com.termux/files/usr/bin/rish"
+DEX_BIN="/data/data/com.termux/files/usr/bin/rish_shizuku.dex"
+
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+BLUE='\033[1;34m'
+X='\033[0m'
+
+any_exist=false
+
+for f in "$RISH_BIN" "$DEX_BIN"; do
+    if [ -f "$f" ]; then
+        rm -f "$f" && echo -e "${GREEN}[*] $(basename "$f") deleted successfully${X}"
+        any_exist=true
+    fi
+done
+
+if [ "$any_exist" = false ]; then
+    echo -e "${BLUE}[*] rish files not installed${X}"
+fi
