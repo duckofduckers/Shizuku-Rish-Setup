@@ -37,7 +37,7 @@ for filename in "${!files[@]}"; do
     fi
 
     echo -e "${YELLOW}[*] Installing $filename...${X}"
-    curl -sS -L -o "$filepath" "$url"
+    curl -fsS -L -o "$filepath" "$url"
 
     if [[ "$filename" == "rish" ]]; then
         chmod +x "$filepath"
