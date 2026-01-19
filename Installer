@@ -44,8 +44,8 @@ for filename in "${!files[@]}"; do
     fi
 
     if [[ -f "$filepath" ]]; then
-        echo -e "${GREEN}[*] $filename setup successfully${X}"
+        echo -e "${GREEN}[*] $filename installed successfully${X}"
     else
-        echo -e "${RED}[*] $filename not setup successfully${X}"
+        echo -e "${RED}[*] $filename not installed successfully${X}"
     fi
 done
