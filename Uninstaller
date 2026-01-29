@@ -6,7 +6,7 @@ BLUE='\033[1;34m'
 YELLOW='\033[1;33m'
 X='\033[0m'
 
-[ -z "${BASH_VERSION:-}" ] && echo -e "${RED}[*] This script must be run with bash" && exit 1
+[ -z "${BASH_VERSION:-}" ] && echo "${RED}[*] This script must be run with bash" && exit 1
 
 if [[ -z "$PREFIX" || -z "$TERMUX_VERSION" ]]; then
     echo -e "${RED}[*] This script must be ran in Termux${X}"
