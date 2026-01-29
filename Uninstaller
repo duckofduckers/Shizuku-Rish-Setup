@@ -18,7 +18,7 @@ any_deleted=false
 
 for f in "$RISH_BIN" "$DEX_BIN"; do
     if [ -f "$f" ]; then
-        rm -f "$f" && echo -e "${GREEN}[*] $(basename "$f") deleted successfully${X}"
+        rm -f "$f" && echo -e "${GREEN}[*] $(basename "$f") uninstalled successfully${X}"
         any_deleted=true
     else
         echo -e "${YELLOW}[*] $(basename "$f") not found${X}"
@@ -26,5 +26,5 @@ for f in "$RISH_BIN" "$DEX_BIN"; do
 done
 
 if [ "$any_deleted" = false ]; then
-    echo -e "${BLUE}[*] No rish files were installed${X}"
+    echo -e "${BLUE}[*] No rish files found${X}"
 fi
