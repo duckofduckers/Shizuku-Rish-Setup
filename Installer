@@ -18,7 +18,7 @@ DEX_BIN="$BIN/rish_shizuku.dex"
 RISH_BIN="$BIN/rish"
 
 if [[ -f "$DEX_BIN" && -f "$RISH_BIN" ]]; then
-    echo -e "${BLUE}[*] Already installed rish files${X}"
+    echo -e "${BLUE}[+] Already installed rish files${X}"
     exit 0
 fi
 
@@ -32,7 +32,7 @@ for filename in "${!files[@]}"; do
     url="${files[$filename]}"
 
     if [[ -f "$filepath" ]]; then
-        echo -e "${BLUE}[*] $filename already exists, skipping${X}"
+        echo -e "${BLUE}[+] $filename already exists, skipping${X}"
         continue
     fi
 
