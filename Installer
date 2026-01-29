@@ -20,8 +20,6 @@ if [[ -f "$DEX_BIN" && -f "$RISH_BIN" ]]; then
     exit 0
 fi
 
-echo -e "${YELLOW}[*] Checking rish files...${X}"
-
 declare -A files=(
     ["rish_shizuku.dex"]="https://github.com/duckofduckers/Shizuku-Rish-Setup/raw/main/rish_shizuku.dex"
     ["rish"]="https://github.com/duckofduckers/Shizuku-Rish-Setup/raw/main/rish"
