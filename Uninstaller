@@ -11,8 +11,9 @@ if [[ -z "$PREFIX" || -z "$TERMUX_VERSION" ]]; then
     exit 1
 fi
 
-RISH_BIN="/data/data/com.termux/files/usr/bin/rish"
-DEX_BIN="/data/data/com.termux/files/usr/bin/rish_shizuku.dex"
+BIN="/data/data/com.termux/files/usr/bin"
+RISH_BIN="$BIN/rish"
+DEX_BIN="$BIN/rish_shizuku.dex"
 
 any_deleted=false
 
