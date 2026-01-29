@@ -6,10 +6,10 @@ YELLOW='\033[1;33m'
 BLUE='\033[1;34m'
 X='\033[0m'
 
-[ -z "${BASH_VERSION:-}" ] && echo "${RED}[*] This script must be run with bash" && exit 1
+[ -z "${BASH_VERSION:-}" ] && echo "${RED}[!] This script must be run with bash" && exit 1
 
 if [[ -z "$PREFIX" || -z "$TERMUX_VERSION" ]]; then
-    echo -e "${RED}[*] This script must be ran in Termux${X}"
+    echo -e "${RED}[!] This script must be ran in Termux${X}"
     exit 1
 fi
 
@@ -36,7 +36,7 @@ for filename in "${!files[@]}"; do
         continue
     fi
 
-    echo -e "${YELLOW}[*] Installing $filename...${X}"
+    echo -e "${YELLOW}[-] Installing $filename...${X}"
     curl -fsS -L -o "$filepath" "$url"
 
     if [[ "$filename" == "rish" ]]; then
@@ -46,6 +46,6 @@ for filename in "${!files[@]}"; do
     if [[ -f "$filepath" ]]; then
         echo -e "${GREEN}[*] $filename installed successfully${X}"
     else
-        echo -e "${RED}[*] $filename not installed successfully${X}"
+        echo -e "${RED}[!] $filename not installed successfully${X}"
     fi
 done
